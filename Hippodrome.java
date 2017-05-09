@@ -10,7 +10,7 @@ public class Hippodrome {
     static Hippodrome game;
 
     //Fields and getters
-    private List<Horse> horses;
+    private static List<Horse> horses = new ArrayList<>();
 
     public List<Horse> getHorses(){
         return this.horses;
@@ -39,7 +39,12 @@ public class Hippodrome {
     }
 
     public void print(){
-
+        for (Horse x: horses) {
+            x.print();
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+        }
     }
 
     public void move(){
@@ -50,11 +55,13 @@ public class Hippodrome {
 
     public static void main(String[] args){
 
-
         game = new Hippodrome(new ArrayList<>());
+
         for (int i = 0; i < 3; i++){
             game.horses.add(new Horse("horse"+i, 3, 0));
         }
+
+        game.run();
 
 
     }
