@@ -22,6 +22,32 @@ public class Hippodrome {
         this.horses = horses;
     }
 
+
+    //methods
+
+    public void run(){
+        for (int i = 0; i < 100; i++){
+            move();
+            print();
+            try {
+                Thread.sleep(200);
+            }
+            catch (Exception e){
+                System.out.println("Sleeping exception in run()");
+            }
+        }
+    }
+
+    public void print(){
+
+    }
+
+    public void move(){
+        for (Horse x: horses) {
+            x.move();
+        }
+    }
+
     public static void main(String[] args){
 
 
